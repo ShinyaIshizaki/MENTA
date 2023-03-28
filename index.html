@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <label>Name: <input type="text" id="nameText"></label>
+    <input type="button" value="Check" onclick="return showErrMsg()">
+  </div>
+  <div>
+    <label>Phone: <input type="text" id="phoneText"></label>
+  </div>
+  <div>
+    <p id="errMsg" class="disActive">入力してください。</p>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+  // エラーメッセージを表示して、空欄を赤枠で囲む
+  function showErrMsg() {
+    // 各種要素を取得する
+    var obj = document.getElementById("errMsg");
+    var inputName = document.getElementById("nameText");
+    var inputPhone = document.getElementById("phoneText");
+    
+    // Nameが空白のとき、エラーメッセージを表示して、空欄を赤枠で囲む
+    if (inputName.value == "") {
+      obj.classList.add("active");
+      inputName.classList.add("bgRed");
+    // そうでないとき、デフォルト表示に戻す
+    } else {
+      obj.classList.remove("active");
+      inputName.classList.remove("bgRed");
+    }
+
+    // Phoneが空白のとき、エラーメッセージを表示して、空欄を赤枠で囲む
+    if (inputPhone.value == "") {
+      obj.classList.add("active");
+      phoneText.classList.add("bgRed");
+      // そうでないとき、デフォルト表示に戻す
+    } else {
+      obj.classList.remove("active");
+      phoneText.classList.remove("bgRed");
+    }
+  }
+</script>

@@ -1,0 +1,12 @@
+.disActive {
+  display: none;
+}
+
+.active {
+  display: block;
+  color: red;
+}
+
+.bgRed {
+  border-color: red;
+}
